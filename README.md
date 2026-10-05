@@ -39,11 +39,11 @@ El sistema contempla tres perfiles principales con accesos diferenciados[cite: 1
 
 | Módulo / Funcionalidad | Cliente (Anónimo) | Cliente (Registrado) | Empleado | Administrador |
 | :--- | :---: | :---: | :---: | :---: |
-| **Cartelera y Buscador** | Sí[cite: 3] | Sí[cite: 3] | Sí[cite: 3] | Sí[cite: 3] |
-| **Compra de Entradas y Candy** | Sí[cite: 3] | Sí[cite: 3] | No[cite: 3] | Sí[cite: 3] |
-| **Reseñas y Puntuaciones** | No[cite: 3] | Sí[cite: 3] | No[cite: 3] | Sí[cite: 3] |
-| **Programa de Fidelización (Puntos)** | No[cite: 3] | Sí[cite: 3] | No[cite: 3] | Sí[cite: 3] |
-| **Validación de QRs (Entrada / Candy)** | No[cite: 3] | No[cite: 3] | Sí[cite: 3] | Sí[cite: 3] |
-| **Gestión del Sistema y Reportes** | No[cite: 3] | No[cite: 3] | No[cite: 3] | Sí[cite: 3] |
+| **Cartelera y Buscador** | Sí | Sí | Sí | Sí |
+| **Compra de Entradas y Candy** | Sí | Sí | No | Sí |
+| **Reseñas y Puntuaciones** | No | Sí | No | Sí |
+| **Programa de Fidelización (Puntos)** | No | Sí | No | Sí |
+| **Validación de QRs (Entrada / Candy)** | No | No | Sí | Sí |
+| **Gestión del Sistema y Reportes** | No | No | No | Sí |
 
 ---
