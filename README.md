@@ -2,36 +2,36 @@
 
 # Cine Burga - Sistema Integral de Gestión y Venta de Entradas
 
-Repositorio oficial del Trabajo Práctico de **Programación IV (C2) - UTN**. Plataforma web integral para la gestión y comercialización de entradas de cine, desarrollada como Progressive Web Application (PWA)[cite: 1].
+Repositorio oficial del Trabajo Práctico de **Programación IV (C2) - UTN**. Plataforma web integral para la gestión y comercialización de entradas de cine, desarrollada como Progressive Web Application (PWA).
 
 ---
 
 ## 🚀 Stack Tecnológico
 * **Frontend:** Angular (Arquitectura modular basada en componentes *standalone*).
-* **Backend as a Service (BaaS):** Supabase (Base de datos en tiempo real, autenticación y almacenamiento)[cite: 1].
+* **Backend as a Service (BaaS):** Supabase (Base de datos en tiempo real, autenticación y almacenamiento).
 * **Estilos e Interfaz:** Tema personalizado *Cyber Burn* (Diseño responsivo y de alto contraste).
 
 ---
 
 ## 👥 Roles y Permisos del Sistema
-El sistema contempla tres perfiles principales con accesos diferenciados[cite: 1]:
+El sistema contempla tres perfiles principales con accesos diferenciados:
 
 1. **Cliente (Anónimo y Registrado):**
-   * Visualización del catálogo de películas y cartelera (Top 3, Próximamente y Preventa)[cite: 1, 2].
-   * Registro de usuarios con validaciones de datos específicos (fecha de nacimiento, etc.) y cupones de bienvenida[cite: 2].
-   * Selección en tiempo real de butacas en salas distribuidas en 20 filas (A-T), incluyendo filas adaptadas para personas con discapacidad (J-K) y zonas VIP (R-S-T)[cite: 1, 2].
-   * Compra integrada de entradas y productos de confitería (Candy Bar) unificados bajo un mismo código QR[cite: 2].
-   * Sección "Mis películas", historial de funciones y sistema de reseñas con calificaciones[cite: 2].
-   * Programa de fidelización de puntos por cada peso gastado y canje de recompensas[cite: 2].
+   * Visualización del catálogo de películas y cartelera (Top 3, Próximamente y Preventa).
+   * Registro de usuarios con validaciones de datos específicos (fecha de nacimiento, etc.) y cupones de bienvenida.
+   * Selección en tiempo real de butacas en salas distribuidas en 20 filas (A-T), incluyendo filas adaptadas para personas con discapacidad (J-K) y zonas VIP (R-S-T).
+   * Compra integrada de entradas y productos de confitería (Candy Bar) unificados bajo un mismo código QR].
+   * Sección "Mis películas", historial de funciones y sistema de reseñas con calificaciones.
+   * Programa de fidelización de puntos por cada peso gastado y canje de recompensas.
 
 2. **Empleado:**
-   * Módulo validador para escaneo rápido de códigos QR (entradas y confitería)[cite: 3].
-   * Opción de ingreso manual de códigos ante fallas técnicas y control de invalidación automática post-uso[cite: 3].
+   * Módulo validador para escaneo rápido de códigos QR (entradas y confitería).
+   * Opción de ingreso manual de códigos ante fallas técnicas y control de invalidación automática post-uso.
 
 3. **Administrador:**
-   * Control total y centralizado de salas, funciones, precios, butacas, productos y cupones[cite: 3].
-   * Reportes diarios de facturación y entradas vendidas con exportación directa a PDF y Excel[cite: 3].
-   * Gráficos estadísticos de rendimiento y log de auditoría detallado con estampa de tiempo[cite: 3].
+   * Control total y centralizado de salas, funciones, precios, butacas, productos y cupones.
+   * Reportes diarios de facturación y entradas vendidas con exportación directa a PDF y Excel.
+   * Gráficos estadísticos de rendimiento y log de auditoría detallado con estampa de tiempo.
 
 ---
 
