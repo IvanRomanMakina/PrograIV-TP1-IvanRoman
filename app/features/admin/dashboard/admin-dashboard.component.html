@@ -1,0 +1,51 @@
+<div class="admin-container">
+  <h2>Panel de Administración y Auditoría</h2>
+  <p class="subtitle">Métricas generales del sistema y reportes ejecutivos</p>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <h3>Recaudación Total</h3>
+      <p class="metric-value">${{ totalVentas }}</p>
+    </div>
+    <div class="metric-card">
+      <h3>Entradas Vendidas</h3>
+      <p class="metric-value">{{ totalEntradasVendidas }}</p>
+    </div>
+  </div>
+
+  <div class="actions-bar">
+    <button class="btn-primary" (click)="exportarPDF()"> Exportar Reporte a PDF</button>
+  </div>
+
+  <div class="audit-section">
+    <h3>Últimas Transacciones (Auditoría)</h3>
+    <div class="table-container" *ngIf="!isLoading; else loadingState">
+      <table>
+        <thead>
+          <tr>
+            <th>ID Reserva</th>
+            <th>Total Pagado</th>
+            <th>Estado</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of logsAuditoria">
+            <td>{{ log.id.slice(0, 12) }}...</td>
+            <td>${{ log.total }}</td>
+            <td>
+              <span class="badge" [class.used]="log.utilizado">
+                {{ log.utilizado ? 'Utilizado' : 'Activo' }}
+              </span>
+            </td>
+            <td>{{ log.created_at | date:'short' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #loadingState>
+      <p class="loading">Cargando registros...</p>
+    </ng-template>
+  </div>
+</div>

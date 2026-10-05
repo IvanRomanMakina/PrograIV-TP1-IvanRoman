@@ -1,0 +1,39 @@
+<div class="auth-page">
+  <div class="auth-container large-container">
+    <h2>Crear Cuenta</h2>
+    <p>Unite al cine y accedé a tu cupón de 20% de descuento.</p>
+
+    <form (ngSubmit)="onRegister()">
+      <div class="form-grid">
+        <input type="text" class="custom-input" placeholder="Nombre" [(ngModel)]="nombre" name="nombre" required>
+        <input type="text" class="custom-input" placeholder="Apellido" [(ngModel)]="apellido" name="apellido" required>
+      </div>
+
+      <input type="email" class="custom-input" placeholder="Tu email" [(ngModel)]="email" name="email" required>
+      <input type="password" class="custom-input" placeholder="Contraseña" [(ngModel)]="password" name="password" required>
+
+      <label class="custom-label">Fecha de Nacimiento (Sin calendario)</label>
+      <div class="date-inputs">
+        <input type="number" class="custom-input" placeholder="Día (ej. 22)" [(ngModel)]="nacimientoDia" name="dia" min="1" max="31" required>
+        <input type="number" class="custom-input" placeholder="Mes (ej. 06)" [(ngModel)]="nacimientoMes" name="mes" min="1" max="12" required>
+        <input type="number" class="custom-input" placeholder="Año (ej. 2006)" [(ngModel)]="nacimientoAnio" name="anio" required>
+      </div>
+
+      <div class="form-grid three-cols">
+        <input type="text" class="custom-input" placeholder="Tipo de Sangre" [(ngModel)]="tipoSangre" name="sangre" required>
+        <input type="text" class="custom-input" placeholder="Color de Ojos" [(ngModel)]="colorOjos" name="ojos" required>
+        <input type="number" class="custom-input" placeholder="Días Vacaciones" [(ngModel)]="diasVacaciones" name="vacaciones" required>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</div>
+
+      <button type="submit" class="btn-primary" [disabled]="isLoading">
+        {{ isLoading ? 'Cargando...' : 'Registrarme' }}
+      </button>
+    </form>
+    
+    <div class="auth-footer">
+      ¿Ya tenés cuenta? <a href="/login">Iniciá sesión</a>
+    </div>
+  </div>
+</div>

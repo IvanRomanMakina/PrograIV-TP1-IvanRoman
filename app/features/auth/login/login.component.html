@@ -1,0 +1,32 @@
+<div class="auth-page">
+  <div class="auth-container">
+    <h2>Iniciar Sesión</h2>
+    <p>Ingresa a tu cuenta para comprar entradas y sumar puntos.</p>
+
+    <form (ngSubmit)="onSubmit()">
+      <input 
+        type="email" 
+        class="custom-input" 
+        placeholder="Tu email" 
+        [(ngModel)]="email" 
+        name="email" 
+        required>
+        
+      <input 
+        type="password" 
+        class="custom-input" 
+        placeholder="Contraseña" 
+        [(ngModel)]="password" 
+        name="password" 
+        required>
+
+      <div *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</div>
+
+      <button type="submit" class="btn-primary">Ingresar</button>
+    </form>
+    
+    <div class="auth-footer">
+      ¿No tenés cuenta? <a href="/registro">Registrarme</a>
+    </div>
+  </div>
+</div>

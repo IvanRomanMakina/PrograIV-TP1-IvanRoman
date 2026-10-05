@@ -1,0 +1,43 @@
+<div class="sala-container">
+  <h2>Selecciona tus Butacas</h2>
+  <p class="subtitle">Filas R, S, T: VIP ($) | Filas J, K: Accesibilidad Funcional</p>
+
+  <!-- Pantalla del Cine -->
+  <div class="screen-indicator">PANTALLA PRINCIPAL</div>
+
+  <!-- Mapa de Butacas -->
+  <div class="cinema-grid">
+    <div *ngFor="let row of asientos" class="cinema-row">
+      <span class="row-label">{{ row[0].row }}</span>
+      <div class="seats-row">
+        <button 
+          *ngFor="let seat of row" 
+          class="seat"
+          [class.vip]="seat.type === 'vip'"
+          [class.accessible]="seat.type === 'accessible'"
+          [class.selected]="seat.status === 'selected'"
+          [class.occupied]="seat.status === 'occupied'"
+          (click)="seleccionarAsiento(seat)">
+          {{ seat.number }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Referencias -->
+  <div class="legends">
+    <div class="legend-item"><span class="seat standard"></span> Estándar</div>
+    <div class="legend-item"><span class="seat accessible"></span> Accesible</div>
+    <div class="legend-item"><span class="seat vip"></span> VIP</div>
+    <div class="legend-item"><span class="seat selected"></span> Seleccionado</div>
+  </div>
+
+  <!-- Resumen de Compra -->
+  <div class="checkout-bar" *ngIf="asientosSeleccionados.length > 0">
+    <div class="summary-info">
+      <p>Asientos: <strong>{{ asientosSeleccionados.length }}</strong></p>
+      <p>Total: <strong>${{ calcularTotal() }}</strong></p>
+    </div>
+    <button class="btn-primary" (click)="continuarAlCandy()">Continuar al Candy Bar</button>
+  </div>
+</div>

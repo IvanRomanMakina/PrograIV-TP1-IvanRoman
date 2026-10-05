@@ -1,0 +1,84 @@
+.candy-container {
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--text-muted, #a1a1aa);
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.candy-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.candy-card {
+  background-color: var(--panel-dark, #18181b);
+  border: 1px solid var(--border-color, #27272a);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .candy-info {
+    text-align: left;
+    h3 { margin: 0 0 5px 0; font-size: 1.1rem; }
+    p { margin: 0 0 8px 0; font-size: 0.85rem; color: var(--text-muted, #a1a1aa); }
+    .price { font-weight: bold; color: white; }
+  }
+
+  .counter-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    span { font-weight: bold; font-size: 1.1rem; width: 20px; text-align: center; }
+
+    .btn-qty {
+      background-color: var(--bg-dark, #09090b);
+      border: 1px solid var(--border-color, #27272a);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover { border-color: var(--accent-red, #e50914); }
+    }
+  }
+}
+
+.checkout-bar {
+  background-color: var(--panel-dark, #18181b);
+  border: 1px solid var(--border-color, #27272a);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .summary-info {
+    text-align: left;
+    p { margin: 0; font-size: 0.95rem; }
+    strong { color: white; }
+  }
+
+  .btn-primary {
+    width: auto;
+    padding: 12px 25px;
+    background-color: var(--accent-red, #e50914);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

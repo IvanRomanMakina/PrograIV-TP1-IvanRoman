@@ -1,0 +1,24 @@
+<div class="validador-container">
+  <div class="validador-card">
+    <h2>Control de Accesos - Empleados</h2>
+    <p class="subtitle">Escanea el código QR del cliente o ingresa el código manual</p>
+
+    <!-- Ingreso Manual Alternativo -->
+    <form (ngSubmit)="onManualSubmit()" class="manual-form">
+      <input 
+        type="text" 
+        class="custom-input" 
+        placeholder="Ingresar código de ticket manualmente..." 
+        [(ngModel)]="codigoManual" 
+        name="codigoManual" 
+        required>
+      
+      <button type="submit" class="btn-primary">Validar Ticket</button>
+    </form>
+
+    <!-- Estado de Validación -->
+    <div *ngIf="mensajeEstado" class="status-box" [class.success]="esExito" [class.error]="!esExito">
+      <p>{{ mensajeEstado }}</p>
+    </div>
+  </div>
+</div>

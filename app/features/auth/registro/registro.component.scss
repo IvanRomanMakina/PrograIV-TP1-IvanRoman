@@ -1,0 +1,99 @@
+/* Reutilizamos variables globales del SCSS anterior */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-dark, #09090b);
+  padding: 20px;
+}
+
+.auth-container.large-container {
+  background-color: var(--panel-dark, #18181b);
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px; /* Más ancho por la cantidad de campos */
+  box-shadow: 0 4px 30px rgba(0,0,0,0.8);
+  
+  h2 { margin-top: 0; margin-bottom: 5px; }
+  p { color: var(--text-muted, #a1a1aa); margin-bottom: 25px; }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-grid.three-cols {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.date-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.custom-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted, #a1a1aa);
+  margin-bottom: 8px;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: var(--bg-dark, #09090b);
+  border: 1px solid var(--border-color, #27272a);
+  border-radius: 6px;
+  color: white;
+  box-sizing: border-box;
+  
+  &:focus { outline: none; border-color: var(--accent-red, #e50914); }
+}
+
+/* Remover flechas numéricas de los inputs para mejor diseño */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--accent-red, #e50914);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  
+  &:hover { background-color: #b80710; }
+  &:disabled { opacity: 0.7; cursor: not-allowed; }
+}
+
+.error-msg {
+  color: var(--accent-red, #e50914);
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.auth-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  
+  a {
+    color: var(--accent-red, #e50914);
+    text-decoration: none;
+    font-weight: bold;
+  }
+}

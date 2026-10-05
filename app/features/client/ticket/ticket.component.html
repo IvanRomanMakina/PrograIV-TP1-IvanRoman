@@ -1,0 +1,22 @@
+<div class="ticket-container">
+  <div class="ticket-card">
+    <h2>🎉 ¡Compra Exitosa!</h2>
+    <p class="subtitle">Presenta este código QR en la entrada del cine</p>
+
+    <div class="qr-wrapper" *ngIf="qrCodeDataUrl">
+      <img [src]="qrCodeDataUrl" alt="Código QR de Entrada">
+    </div>
+
+    <div class="ticket-details">
+      <p>Asientos: <strong>{{ asientos.join(', ') }}</strong></p>
+      <div *ngIf="candyItems.length > 0">
+        <h4>Candy Bar Incluido:</h4>
+        <ul>
+          <li *ngFor="let item of candyItems">{{ item.cantidad }}x {{ item.nombre }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="btn-primary" (click)="volverInicio()">Volver a la Cartelera</button>
+  </div>
+</div>

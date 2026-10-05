@@ -1,0 +1,27 @@
+<div class="candy-container">
+  <h2>¡Acompaña tu función con algo rico!</h2>
+  <p class="subtitle">Selecciona tus productos de Candy Bar favoritos</p>
+
+  <div class="candy-grid">
+    <div class="candy-card" *ngFor="let item of productos">
+      <div class="candy-info">
+        <h3>{{ item.nombre }}</h3>
+        <p>{{ item.descripcion }}</p>
+        <span class="price">${{ item.precio }}</span>
+      </div>
+      
+      <div class="counter-control">
+        <button class="btn-qty" (click)="cambiarCantidad(item, -1)">-</button>
+        <span>{{ item.cantidad }}</span>
+        <button class="btn-qty" (click)="cambiarCantidad(item, 1)">+</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="checkout-bar">
+    <div class="summary-info">
+      <p>Total Candy Bar: <strong>${{ calcularTotalCandy() }}</strong></p>
+    </div>
+    <button class="btn-primary" (click)="finalizarCompra()">Ir al Pago y Generar Ticket</button>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<div class="cartelera-container">
+  
+  <!-- Banner Top 3 Películas Más Vendidas -->
+  <section class="top-section" *ngIf="peliculaDestacadas.length > 0">
+    <h2 class="section-title">🔥 Top 3 Más Vendidas</h2>
+    <div class="top-grid">
+      <div class="top-card" *ngFor="let movie of peliculaDestacadas; let i = index">
+        <div class="badge-rank">#{{ i + 1 }}</div>
+        <img [src]="movie.imagen_url || 'assets/placeholder-movie.jpg'" [alt]="movie.titulo">
+        <div class="top-card-info">
+          <h3>{{ movie.titulo }}</h3>
+          <p class="rating">⭐ {{ movie.promedio_calificacion || '4.8' }} / 5</p>
+          <button class="btn-primary" (click)="irACompra(movie.id)">Comprar Entradas</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buscador y Filtros Ágiles (Sin Scroll Molesto) -->
+  <section class="search-section">
+    <div class="search-bar">
+      <input 
+        type="text" 
+        class="custom-input" 
+        placeholder="Buscar película por título..." 
+        [(ngModel)]="busquedaTexto" 
+        (input)="filtrar()">
+    </div>
+
+    <div class="genre-chips">
+      <button 
+        *ngFor="let g of listaGeneros" 
+        class="chip" 
+        [class.active]="generoSeleccionado === g" 
+        (click)="seleccionarGenero(g)">
+        {{ g }}
+      </button>
+    </div>
+  </section>
+
+  <!-- Lista de Películas en Cartelera -->
+  <section class="movies-section">
+    <h2 class="section-title">En Cartelera</h2>
+
+    <div class="movies-grid" *ngIf="!isLoading; else loadingState">
+      <div class="movie-card" *ngFor="let movie of peliculasFiltradas">
+        
+        <div class="poster-container">
+          <img [src]="movie.imagen_url || 'assets/placeholder-movie.jpg'" [alt]="movie.titulo">
+          
+          <!-- Badges Informativos -->
+          <span class="badge preventa" *ngIf="movie.es_preventa">PREVENTA 7 DÍAS</span>
+          <span class="badge age-rating" [class.plus18]="movie.restriccion_edad === 18">
+            {{ movie.restriccion_edad > 0 ? '+' + movie.restriccion_edad : 'ATP' }}
+          </span>
+        </div>
+
+        <div class="movie-details">
+          <h3>{{ movie.titulo }}</h3>
+          <p class="duration">⏱️ {{ movie.duracion_minutos }} min</p>
+          
+          <div class="genres">
+            <span class="genre-tag" *ngFor="let gen of movie.generos">{{ gen }}</span>
+          </div>
+
+          <p class="age-warning" *ngIf="movie.restriccion_edad >= 13">
+            ⚠️ Requiere acompañamiento de un adulto para menores.
+          </p>
+
+          <div class="price-container">
+            <span *ngIf="movie.es_preventa" class="price-preventa">
+              ${{ movie.precio_preventa }} <small>(Precio Especial)</small>
+            </span>
+            <span *ngIf="!movie.es_preventa" class="price">
+              ${{ movie.precio_normal || 4500 }}
+            </span>
+          </div>
+
+          <button class="btn-primary" (click)="irACompra(movie.id)">Seleccionar Función</button>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #loadingState>
+      <div class="loading-spinner">Cargando catálogo...</div>
+    </ng-template>
+  </section>
+
+  <!-- Sección Próximamente -->
+  <section class="proximamente-section" *ngIf="proximosEstrenos.length > 0">
+    <h2 class="section-title">🚀 Próximamente en Cines</h2>
+    <div class="movies-grid">
+      <div class="movie-card upcoming" *ngFor="let movie of proximosEstrenos">
+        <img [src]="movie.imagen_url || 'assets/placeholder-movie.jpg'" [alt]="movie.titulo">
+        <div class="movie-details">
+          <h3>{{ movie.titulo }}</h3>
+          <p>Estreno: {{ movie.fecha_estreno }}</p>
+          <button class="btn-secondary" (click)="activarAlerta(movie)">🔔 Activar Alerta</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
